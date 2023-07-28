@@ -1,7 +1,6 @@
 "use client"
 
-import { Main } from "../../copornents/Main"
-
+import { Main } from "../copornents/Main"
 
 export default function Page (){
   return (
