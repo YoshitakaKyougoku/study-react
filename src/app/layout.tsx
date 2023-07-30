@@ -18,13 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex  container text-white text-2xl p-4 justify-between font-mono font-bold border-b-2" >
-          <h2>Header</h2>
-          <div className="space-x-10 " >
-            <Link className="hover:text-black" href="/">
+        <div className="flex  container text-white text-2xl p-4 justify-between font-mono font-bold border-b-2 border-gray-500 border-dashed duration-300" >
+          <h2 className="transition ease-in-out delay-150 hover:translate-x-1 ">Header</h2>
+          <div className="opacity-75 space-x-10 " >
+            <Link className="transition ease-in-out delay-150 hover:text-black" href="/">
               app
             </Link>
-            <Link className="hover:text-black" href="/about">
+            <Link className="transition ease-in-out delay-150 hover:text-black" href="/about">
               about
             </Link>
           </div>
