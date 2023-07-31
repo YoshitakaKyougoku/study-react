@@ -25,7 +25,7 @@ const ITEMS = [
 
 export function Linkarea (){
     return (
-        <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+        <div className="mt-20 mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
           {ITEMS.map(item => {
             return (
               <a
