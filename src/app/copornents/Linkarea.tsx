@@ -1,4 +1,7 @@
+"use client"
+
 import '@/src/app/globals.css'
+import { useCallback, useState } from 'react';
 
 const ITEMS = [
   {
@@ -24,9 +27,18 @@ const ITEMS = [
 ]
 
 export function Linkarea (){
+    const [items,setItems] = useState(ITEMS);
+    const handleReduse = useCallback(() => {
+        setItems(prevItems => {
+          return prevItems.slice(0,prevItems.length - 1);
+        });
+    },[]);
     return (
-        <div className="mt-20 mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-          {ITEMS.map(item => {
+      <div>
+        <button onClick = {handleReduse}
+                className="text-2xl text-pink-500">reduse</button>
+        <div className="mt-10 mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+          {items.map(item => {
             return (
               <a
                 key = {item.href}
@@ -47,6 +59,8 @@ export function Linkarea (){
               </a>
             )
           })}
+      </div>
+
       </div>
     );
 };
