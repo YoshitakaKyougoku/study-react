@@ -1,26 +1,10 @@
 "use client"
 
-import { useCallback, useState } from "react"
 import { Main } from "../copornents/Main"
+import { useCounter } from "@/src/app/hooks/useCounter";
 
 export default function Page (){
-  const [count, setCount] =  useState(1)
-  const [isShow, setIsShow] = useState(true);
-
-  
-  const handleClick = useCallback(() => {
-    if (count < 9){
-      setCount((prevCount) => prevCount + 1);
-    } else {
-      setCount((prevCount) => prevCount * 0)
-    }
-  },[count]);
-
-  const handleDisplay = useCallback(() => {
-
-    setIsShow((prevIsShow) => !prevIsShow);
-
-  },[]);
+  const {count, isShow, handleClick, handleDisplay} = useCounter(); 
   return (
     <>
       {isShow ? <div className="flex justify-center space-x-2 absolute inset-x-1/2 text-3xl font-serif font-bold ">
@@ -33,7 +17,6 @@ export default function Page (){
       <Main page="about"
           onClick ={handleClick} />
     </>
-    
     
   )
 }
