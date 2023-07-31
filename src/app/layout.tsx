@@ -2,6 +2,10 @@ import '@/src/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from "next/link"
+import { Main } from "@/src/app/copornents/Main";
+import { Linkarea } from '@/src/app/copornents/Linkarea';
+import { Logo } from '@/src/app/copornents/Logo ';
+import { Segment } from '@/src/app/copornents/Segment';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,20 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex  container text-white text-2xl p-4 justify-between font-mono font-bold border-b-2 border-gray-500 border-dashed duration-300" >
-          <h2 className="transition ease-in-out delay-150 hover:translate-x-1 ">Header</h2>
-          <div className="opacity-75 space-x-10 " >
-            <Link className="transition ease-in-out delay-150 hover:text-black" href="/">
-              app
-            </Link>
-            <Link className="transition ease-in-out delay-150 hover:text-black" href="/about">
-              about
-            </Link>
+        <main className="min-h-screen">
+          <div className="flex container text-white text-2xl p-4 justify-between font-mono font-bold border-b-2 border-gray-500 border-dashed duration-300" >
+            <h2 className="transition ease-in-out delay-150 hover:translate-x-1 ">Header</h2>
+            
+            <Segment />
           </div>
-          
-        </div>
+          <Main />
+          {children}
+          <Logo />
+          <Linkarea />
+        </main>
         
-        {children}
+        
       </body>
     </html>
   )
