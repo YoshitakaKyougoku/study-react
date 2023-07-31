@@ -10,15 +10,15 @@ export default function Page (){
   
   const handleClick = useCallback(() => {
     if (count < 9){
-      setCount((count) => count + 1);
+      setCount((prevCount) => prevCount + 1);
     } else {
-      setCount((count) => count * 0)
+      setCount((prevCount) => prevCount * 0)
     }
   },[count]);
 
   const handleDisplay = useCallback(() => {
 
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
 
   },[]);
   return (
